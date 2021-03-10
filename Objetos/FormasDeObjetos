@@ -1,0 +1,37 @@
+const obj1 = {}
+console.log(obj1)
+
+
+console.log(typeof Object, typeof new Object)
+const obj2 = new Object
+console.log(obj2)
+
+
+function Produto(nome,preco,desconto){
+    this.nome = nome
+    this.preco= preco
+    this.desconto = desconto
+    this.getPrecoComDesconto = ()=>{
+        return preco * (1-desconto)
+    }
+}
+
+const p1= new Produto('bbbb', 7.99, 0.15)
+const p2= new Produto('aaaa', 7.99, 0.15)
+console.log(p1.getPrecoComDesconto(), p2.getPrecoComDesconto())
+
+
+function criarFuncionario(nome, salarioBase,faltas){
+    return{
+        nome,
+        salarioBase,
+        faltas,
+        getSalario(){
+            return (salarioBase/30)* (30 - faltas)
+
+        }
+    }
+}
+
+const f1= criarFuncionario('',7777,4)
+console.log(f1.getSalario())
